@@ -150,14 +150,16 @@ public class FabricUtil {
         }
 
         static {
+            String now;
             try {
                 for (URL url : getResources("fabric.mod.json")) {
+                    now = url.toString();
                     JsonObject jsonObject = MiscUtil.readJson(url);
                     String id = jsonObject.get("id").getAsString();
                     data.put(id, new ModMetaData(id, jsonObject));
                 }
             } catch (IOException | UnsupportedOperationException e) {
-                MagicLibReference.LOGGER.error(url.toString());
+                MagicLibReference.LOGGER.error(now);
                 e.printStackTrace();
                 throw new RuntimeException(e);
             }
