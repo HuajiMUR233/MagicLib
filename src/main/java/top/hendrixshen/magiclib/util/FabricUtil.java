@@ -20,7 +20,7 @@ import java.util.*;
 import java.util.function.BiConsumer;
 
 public class FabricUtil {
-    // Fabric Loader 0.11 and below support
+    // Fabric Loader 0.11 and below support 
     private static Method fabricLegacyVersionPredicateParser;
     private static Method fabricLegacyDisplayCriticalError;
 
