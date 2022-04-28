@@ -48,15 +48,6 @@ jobs:
       - name: Publish Maven with Gradle
         run: ./gradlew build publish -x test --stacktrace
 
-      - name: Upload Maven to GitHub
-        uses: s0/git-publish-subdir-action@v2.5.0
-        env:
-          REPO: git@github.com:Hendrix-Shen/Maven.git
-          BRANCH: master
-          FOLDER: publish
-          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
-          CLEAR_GLOBS_FILE: '.clear-target-files'
-
       - name: Create Github release
         uses: marvinpinto/action-automatic-releases@v1.2.1
         with:
