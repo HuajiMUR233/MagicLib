@@ -150,7 +150,7 @@ public class FabricUtil {
         }
 
         static {
-            String now;
+            String now = "fuckkkkkkkkkkkkkkkkkkkkkkk";
             try {
                 for (URL url : getResources("fabric.mod.json")) {
                     now = url.toString();
