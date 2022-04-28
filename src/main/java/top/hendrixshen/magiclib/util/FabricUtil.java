@@ -157,6 +157,7 @@ public class FabricUtil {
                     data.put(id, new ModMetaData(id, jsonObject));
                 }
             } catch (IOException | UnsupportedOperationException e) {
+                MagicLibReference.LOGGER.error(url.toString());
                 e.printStackTrace();
                 throw new RuntimeException(e);
             }
