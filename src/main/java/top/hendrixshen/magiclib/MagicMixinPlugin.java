@@ -66,7 +66,11 @@ public class MagicMixinPlugin extends EmptyMixinPlugin {
                 try {
                     knotClassLoader = Class.forName("net.fabricmc.loader.launch.knot.KnotClassLoader");
                 } catch (ClassNotFoundException e1) {
-                    throw new RuntimeException(e1);
+                    try {
+                        knotClassLoader = Class.forName("org.quiltmc.loader.impl.launch.knot.KnotClassLoader");
+                    } catch (ClassNotFoundException e1) {
+                        throw new RuntimeException(e1);
+                    }
                 }
             }
 
